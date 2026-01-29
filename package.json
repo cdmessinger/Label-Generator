@@ -1,0 +1,17 @@
+{
+	"name": "label-generator",
+	"version": "1.0.0",
+	"description": "",
+	"main": "main.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"type": "module",
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"dependencies": {
+		"handlebars": "^4.7.8",
+		"puppeteer": "^24.36.1"
+	}
+}

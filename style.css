@@ -1,0 +1,280 @@
+@page {
+	size: 6in 4in;
+	margin: 0;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	font-family: Arial, sans-serif;
+}
+
+/* Typography */
+h1 {
+	margin: 0;
+	font-size: 16pt;
+	letter-spacing: 0.04em;
+}
+
+h2 {
+	margin: 0;
+	font-size: 8pt;
+	text-transform: uppercase;
+	letter-spacing: 0.06em;
+}
+
+/* Outer label */
+.label {
+	width: 6in;
+	height: 4in;
+	padding: 0.07in;
+	border: 2px solid #000;
+}
+
+/* Two main columns */
+.row {
+	height: 100%;
+	display: flex;
+	gap: 0.12in;
+	align-items: stretch;
+}
+
+/* LEFT column */
+.leftSide {
+	flex: 1 1 auto;
+	min-width: 0;
+	display: flex;
+	flex-direction: column;
+	gap: 0.05in;
+}
+
+/* RIGHT column (fixed width like your mockup) */
+.rightSide {
+	flex: 0 0 2.05in; /* tweak slightly if you want */
+	min-width: 0;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	gap: 0.05in;
+}
+
+/* Shared “boxed” look */
+.panel,
+.hazardousWaste,
+.dateBox,
+.contents,
+.logoBox,
+.qrBox {
+	border: 1px solid #000;
+	padding: 0.05in;
+	margin: 0;
+}
+
+/* Header box */
+.hazardousWaste {
+	border: 2px solid #000;
+	text-align: center;
+	padding: 0.08in;
+}
+
+/* Split rows */
+.split {
+	display: flex;
+	gap: 0.08in;
+	width: 100%;
+	align-items: stretch;
+}
+
+/* Dates */
+.dateBox {
+	flex: 1;
+	min-height: 0.55in;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+/* Contents fills remaining left height */
+.contents {
+	flex: 1 1 auto;
+	min-height: 0;
+	display: flex;
+	flex-direction: column;
+	gap: 0.08in;
+}
+
+/* Two chemical columns */
+.chemicalList {
+	flex: 1;
+	min-width: 0;
+	display: flex;
+	flex-direction: column;
+	gap: 0.04in;
+}
+
+.chemical {
+	border: 1px solid #000;
+	padding: 0.04in 0.06in;
+	font-size: 9.5pt;
+	line-height: 1.1;
+	min-height: 0.24in;
+	display: flex;
+	align-items: center;
+}
+
+/* Top right: logo + QR */
+.topRight .logoBox,
+.topRight .qrBox {
+	height: 0.7in;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.topRight .logoBox {
+	flex: 2;
+}
+
+.topRight .qrBox {
+	flex: 1;
+}
+
+.logoBox img {
+	width: 100%;
+}
+
+/* Hazards should fill remaining right height above generator info */
+#hazards {
+	flex: 1 1 auto;
+	min-height: 0;
+	padding: 0;
+	display: flex;
+	flex-direction: column;
+}
+
+/* Pictogram GRID: exact 2-column “table-like” layout */
+.pictogramGrid {
+	flex: 1 1 auto;
+	min-height: 0;
+
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-auto-rows: 0.44in; /* row height; tweak if needed */
+	padding: 0;
+
+	align-content: start;
+}
+
+/* Pictogram cell */
+.pictogram {
+	padding: 0.03in;
+	display: flex;
+	align-items: center;
+	margin: -1px 0 0 -1px;
+}
+
+/* Spacer cell */
+.pictogram.spacer {
+	border: 0;
+	padding: 0;
+}
+
+/* Inner layout: checkbox left, icon right */
+.pictogramInner {
+	padding-left: 0.05in;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	gap: 0.03in;
+}
+
+/* Checkbox column (left) */
+.pictogramCheck {
+	width: 0.3in;
+	height: 0.3in;
+	margin: 0;
+	flex: 0 0 0.18in; /* fixed left column */
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+/* Icon + label column (right) */
+.iconBlock {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 0.015in;
+}
+
+/* Icon sizing */
+.iconBlock img {
+	width: 0.32in;
+	height: 0.32in;
+	object-fit: contain;
+}
+
+/* Label text */
+.iconBlock p {
+	margin: 0;
+	font-size: 5pt;
+	text-align: center;
+	line-height: 1.1;
+}
+
+.pictogram *,
+.iconBlock * {
+	margin: 0;
+}
+
+/* generator info section */
+
+#generatorInfo {
+	height: 0.8in;
+	flex: 0 0 auto;
+	padding: 0in;
+	margin: 0;
+}
+
+#generatorInfo p {
+	font-size: 6pt;
+	padding: 0;
+	margin: 0.02in;
+}
+
+#generatorInfoLabel {
+	border: none;
+	border-bottom: 1px solid black;
+}
+
+#generatorBox {
+	border: none;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	height: 0.55in;
+}
+
+#generatorLeft {
+	border: none;
+	border-right: 1px solid black;
+	flex: 1.5;
+}
+
+#generatorRight {
+	border: none;
+	flex: 1;
+}
+
+#generatorRight h2 {
+	margin: 0;
+	font-size: 8pt;
+	text-transform: bold;
+	text-transform: uppercase;
+	letter-spacing: 0.06em;
+}

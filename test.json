@@ -1,0 +1,30 @@
+{
+	"date": "2026-01-16",
+	"chemicals": [
+		{
+			"name": "Acetone",
+			"casNo": "67-64-1",
+			"signalWord": "Danger",
+			"pictograms": ["flame", "health"]
+		},
+		{
+			"name": "Hydrochloric acid",
+			"casNo": "7647-01-0",
+			"signalWord": "Danger",
+			"pictograms": ["corrosion"]
+		},
+		{
+			"name": "Copper(II) sulfate pentahydrate",
+			"casNo": "7758-98-7",
+			"signalWord": "Warning",
+			"pictograms": ["environment"]
+		}
+	],
+	"labeler": {
+		"name": "Caleb",
+		"room": "6-146",
+		"department": "Chemistry",
+		"phoneNo": "860-774-3048, x43048"
+	},
+	"qrDataUrl": null
+}
