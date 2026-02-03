@@ -1,10 +1,16 @@
 @page {
-	size: 6in 4in;
+	size: 8.5in 11in;
 	margin: 0;
 }
 
 * {
 	box-sizing: border-box;
+}
+
+.page {
+	width: 8.5in;
+	height: 11in;
+	border: 2px solid black;
 }
 
 body {
@@ -15,12 +21,14 @@ body {
 /* Typography */
 h1 {
 	margin: 0;
-	font-size: 16pt;
+	font-size: 20pt;
+	font-weight: 20px;
 	letter-spacing: 0.04em;
 }
 
 h2 {
 	margin: 0;
+	padding: 0;
 	font-size: 8pt;
 	text-transform: uppercase;
 	letter-spacing: 0.06em;
@@ -32,6 +40,10 @@ h2 {
 	height: 4in;
 	padding: 0.07in;
 	border: 2px solid #000;
+
+	position: absolute;
+	top: 1in;
+	left: 1.25in;
 }
 
 /* Two main columns */
@@ -90,11 +102,12 @@ h2 {
 
 /* Dates */
 .dateBox {
+	text-align: center;
 	flex: 1;
-	min-height: 0.55in;
+	min-height: 0.4in;
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
+	justify-content: top;
 }
 
 /* Contents fills remaining left height */
@@ -104,6 +117,23 @@ h2 {
 	display: flex;
 	flex-direction: column;
 	gap: 0.08in;
+}
+
+.contents p {
+	font-size: 6pt;
+	margin: 0;
+	padding: 0;
+}
+
+.inlineHeader {
+	display: flex;
+	align-items: baseline;
+	gap: 0.08in;
+}
+
+.inlineHeader p,
+.inlineHeader h2 {
+	margin: 0;
 }
 
 /* Two chemical columns */
@@ -125,6 +155,13 @@ h2 {
 	align-items: center;
 }
 
+#notes {
+	border: none;
+	flex: 0 0 auto;
+	padding: 0in;
+	margin: 0;
+}
+
 /* Top right: logo + QR */
 .topRight .logoBox,
 .topRight .qrBox {
@@ -132,6 +169,11 @@ h2 {
 	display: flex;
 	align-items: center;
 	justify-content: center;
+}
+
+.qrBox img {
+	/* readjust sizing once you actually generate a QR */
+	width: 110%;
 }
 
 .topRight .logoBox {
@@ -222,7 +264,7 @@ h2 {
 /* Label text */
 .iconBlock p {
 	margin: 0;
-	font-size: 5pt;
+	font-size: 5.5pt;
 	text-align: center;
 	line-height: 1.1;
 }
@@ -237,7 +279,7 @@ h2 {
 #generatorInfo {
 	height: 0.8in;
 	flex: 0 0 auto;
-	padding: 0in;
+	padding: 0;
 	margin: 0;
 }
 
@@ -253,28 +295,59 @@ h2 {
 }
 
 #generatorBox {
-	border: none;
 	margin: 0;
 	padding: 0;
 	display: flex;
+	align-items: stretch;
 	height: 0.55in;
 }
 
 #generatorLeft {
-	border: none;
-	border-right: 1px solid black;
+	margin: 0;
+	padding: 0;
 	flex: 1.5;
+	display: flex;
 }
 
 #generatorRight {
-	border: none;
+	margin: 0;
+	padding: 0;
 	flex: 1;
+	border: none;
+	border-left: 1px solid;
 }
 
 #generatorRight h2 {
-	margin: 0;
+	margin: 0.02in;
+	text-align: center;
 	font-size: 8pt;
 	text-transform: bold;
 	text-transform: uppercase;
-	letter-spacing: 0.06em;
+}
+
+#contactBox {
+	margin: 0.05in;
+	display: flex;
+}
+
+#contactRightText,
+#contactLeftText {
+	margin: 0;
+	padding: 0;
+}
+
+#contactLeftText {
+	text-align: left;
+	font-weight: bold;
+	flex: 1;
+}
+
+#contactRightText {
+	text-align: right;
+	flex: 2;
+}
+
+#contactRightText p {
+	padding-left: 25px;
+	white-space: nowrap;
 }
