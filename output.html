@@ -1,196 +1,284 @@
-<!doctype html>
 <html>
 	<head>
-		<meta charset="utf-8" />
+		<meta charset='utf-8' />
 		<title>Waste Label</title>
-		<link rel="stylesheet" href="style.css" />
+		<link rel='stylesheet' href='style.css' />
+		<script src='generateLabel.js'></script>
 	</head>
 
 	<body>
-		<div class="label">
-			<div class="row">
-				<div class="leftSide">
-					<div class="hazardousWaste">
-						<h1>HAZARDOUS WASTE</h1>
-					</div>
+		<div class='page'>
+			<div class='label'>
+				<div class='row'>
+					<div class='leftSide'>
+						<div class='hazardousWaste'>
+							<h1>HAZARDOUS WASTE</h1>
+						</div>
 
-					<div class="dates">
-						<div class="split">
-							<div class="dateBox" id="startDate">
-								<h2>Start Date</h2>
+						<div class='dates'>
+							<div class='split'>
+								<div class='dateBox' id='startDate'>
+									<h2>Start Date</h2>
+									<p>2/6/2026</p>
+								</div>
+								<div class='dateBox' id='endDate'>
+									<h2>End Date</h2>
+									<p></p>
+								</div>
 							</div>
-							<div class="dateBox" id="endDate">
-								<h2>End Date</h2>
+						</div>
+
+						<div class='contents' id='contents'>
+							<div class='inlineHeader'>
+								<h2>Contents:</h2>
+								<p>
+									(Use full chemical names - no abbreviations)
+								</p>
+							</div>
+
+							<div class='split'>
+								<div class='chemicalList'>
+										<div class='chemical'>Acetone</div>
+										<div class='chemical'>Hydrochloric acid</div>
+										<div class='chemical'>Copper(II) sulfate pentahydrate</div>
+										<div class='chemical'>Sodium hydroxide</div>
+										<div class='chemical'>Ethanol</div>
+										<div class='chemical'>Nitric acid</div>
+										<div class='chemical'>Hydrogen peroxide (30%)</div>
+										<div class='chemical'>Methanol</div>
+								</div>
+
+								<div class='chemicalList'>
+										<div class='chemical'>Potassium permanganate</div>
+										<div class='chemical'>Formaldehyde solution</div>
+										<div class='chemical'></div>
+										<div class='chemical'></div>
+										<div class='chemical'></div>
+										<div class='chemical'></div>
+										<div class='chemical'></div>
+										<div class='chemical'></div>
+								</div>
+							</div>
+							<div class='panel' id='notes'>
+								<h2>Notes:</h2>
 							</div>
 						</div>
 					</div>
 
-					<div class="contents" id="contents">
-						<h2>Contents:</h2>
-                        <p>(Use full chemical names - no abbreviations)</p>
-
-						<div class="split">
-							<div class="chemicalList">
-								<div class="chemical">placeholder</div>
-								<div class="chemical">placeholder</div>
-								<div class="chemical">placeholder</div>
-								<div class="chemical">placeholder</div>
-								<div class="chemical">placeholder</div>
-								<div class="chemical">placeholder</div>
-								<div class="chemical">placeholder</div>
-
+					<div class='rightSide'>
+						<div class='split topRight'>
+							<div class='logoBox' id='logo'>
+								<img
+									src='https://ctstate.edu/images/Logos-and-graphics/Logos-Campus/CT-STATE-Tunxis-RGB.png'
+									alt='LOGO'
+								/>
 							</div>
-
-							<div class="chemicalList">
-								<div class="chemical">placeholder</div>
-								<div class="chemical">placeholder</div>
-								<div class="chemical">placeholder</div>
-								<div class="chemical">placeholder</div>
-								<div class="chemical">placeholder</div>
-								<div class="chemical">placeholder</div>
-								<div class="chemical">placeholder</div>
+							<div class='qrBox' id='qrCode'>
+								<img
+									src='https://upload.wikimedia.org/wikipedia/commons/4/41/QR_Code_Example.svg'
+									alt='QR CODE'
+								/>
 							</div>
 						</div>
-                        <div class="panel" id="notes">
-                            <h2>Notes:</h2>
-                        </div>
-					</div>
-				</div>
+						<div class='panel' id='hazards'>
+							<div class='pictogramGrid'>
+								<!-- Row 1 -->
+								<div class='pictogram' id='flammable'>
+									<label class='pictogramInner'>
+										<input
+											class='pictogramCheck'
+											type='checkbox'
+											data-hazard='flammable'
+											checked
+										/>
+										<span class='iconBlock'>
+											<img
+												src='./images/flammable.png'
+												alt=''
+											/>
+											<p>Flammable</p>
+										</span>
+									</label>
+								</div>
 
-				<div class="rightSide">
-					<div class="split topRight">
-						<div class="logoBox" id="logo">
-                            <img src="https://ctstate.edu/images/Logos-and-graphics/Logos-Campus/CT-STATE-Tunxis-RGB.png" alt="LOGO">
+								<div class='pictogram' id='reactive'>
+									<label class='pictogramInner'>
+										<input
+											class='pictogramCheck'
+											type='checkbox'
+											data-hazard='reactive'
+											
+										/>
+										<span class='iconBlock'>
+											<img
+												src='./images/reactive.png'
+												alt=''
+											/>
+											<p>Reactive</p>
+										</span>
+									</label>
+								</div>
+
+								<!-- Row 2 -->
+								<div class='pictogram' id='corrosive'>
+									<label class='pictogramInner'>
+										<input
+											class='pictogramCheck'
+											type='checkbox'
+											data-hazard='corrosive'
+											checked
+										/>
+										<span class='iconBlock'>
+											<img
+												src='./images/corrosive.png'
+												alt=''
+											/>
+											<p>Corrosive</p>
+										</span>
+									</label>
+								</div>
+
+								<div class='pictogram' id='health'>
+									<label class='pictogramInner'>
+										<input
+											class='pictogramCheck'
+											type='checkbox'
+											data-hazard='health'
+											checked
+										/>
+										<span class='iconBlock'>
+											<img
+												src='./images/healthHazard.png'
+												alt=''
+											/>
+											<p>Health Hazard</p>
+										</span>
+									</label>
+								</div>
+
+								<!-- Row 3 -->
+								<div class='pictogram' id='irritant'>
+									<label class='pictogramInner'>
+										<input
+											class='pictogramCheck'
+											type='checkbox'
+											data-hazard='irritant'
+											
+										/>
+										<span class='iconBlock'>
+											<img
+												src='./images/irritant.png'
+												alt=''
+											/>
+											<p>Irritant</p>
+										</span>
+									</label>
+								</div>
+
+								<div class='pictogram' id='environmental'>
+									<label class='pictogramInner'>
+										<input
+											class='pictogramCheck'
+											type='checkbox'
+											data-hazard='environmental'
+											checked
+										/>
+										<span class='iconBlock'>
+											<img
+												src='./images/environmental.png'
+												alt=''
+											/>
+											<p>Environmental</p>
+										</span>
+									</label>
+								</div>
+
+								<!-- Row 4 -->
+								<div class='pictogram' id='acute'>
+									<label class='pictogramInner'>
+										<input
+											class='pictogramCheck'
+											type='checkbox'
+											data-hazard='acute'
+											checked
+										/>
+										<span class='iconBlock'>
+											<img
+												src='./images/acuteToxicity.png'
+												alt=''
+											/>
+											<p>Acute Toxicity</p>
+										</span>
+									</label>
+								</div>
+
+								<div class='pictogram' id='gas'>
+									<label class='pictogramInner'>
+										<input
+											class='pictogramCheck'
+											type='checkbox'
+											data-hazard='gas'
+											
+										/>
+										<span class='iconBlock'>
+											<img
+												src='./images/gas.png'
+												alt=''
+											/>
+											<p>Gas Under Pressure</p>
+										</span>
+									</label>
+								</div>
+
+								<!-- Row 5 -->
+								<div class='pictogram' id='oxidizer'>
+									<label class='pictogramInner'>
+										<input
+											class='pictogramCheck'
+											type='checkbox'
+											data-hazard='oxidizer'
+											checked
+										/>
+										<span class='iconBlock'>
+											<img
+												src='./images/oxidizer.png'
+												alt=''
+											/>
+											<p>Oxidizer</p>
+										</span>
+									</label>
+								</div>
+
+								<!-- Spacer cell (keeps 5 left / 4 right) -->
+								<div
+									class='pictogram spacer'
+									aria-hidden='true'
+								></div>
+							</div>
 						</div>
-						<div class="qrBox" id="qrCode">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/QR_Code_Example.svg" alt="QR CODE">
-                            <!-- QR CODE GOES HERE -->
-						</div>
-					</div>
-                    <div class="panel" id="hazards">
-                        <div class="pictogramGrid">
-                            <!-- Row 1 -->
-                            <div class="pictogram" id="flammable">
-                                <label class="pictogramInner">
-                                    <input class="pictogramCheck" type="checkbox" data-hazard="flammable" />
-                                    <span class="iconBlock">
-                                        <img src="https://www.osha.gov/sites/default/files/inline-images/image2.png" alt="" />
-                                        <p>Flammable</p>
-                                    </span>
-                                </label>
-                            </div>
-
-                            <div class="pictogram" id="reactive">
-                                <label class="pictogramInner">
-                                    <input class="pictogramCheck" type="checkbox" data-hazard="reactive" />
-                                    <span class="iconBlock">
-                                        <img src="https://www.osha.gov/sites/default/files/inline-images/image3.png" alt="" />
-                                        <p>Reactive</p>
-                                    </span>
-                                </label>
-                            </div>
-
-                            <!-- Row 2 -->
-                            <div class="pictogram" id="corrosive">
-                                <label class="pictogramInner">
-                                    <input class="pictogramCheck" type="checkbox" data-hazard="corrosive" />
-                                    <span class="iconBlock">
-                                        <img src="https://www.osha.gov/sites/default/files/inline-images/image5.png" alt="" />
-                                        <p>Corrosive</p>
-                                    </span>
-                                </label>
-                            </div>
-
-                            <div class="pictogram" id="health">
-                                <label class="pictogramInner">
-                                    <input class="pictogramCheck" type="checkbox" data-hazard="health" />
-                                    <span class="iconBlock">
-                                        <img src="https://www.osha.gov/sites/default/files/inline-images/image7.png" alt="" />
-                                        <p>Health Hazard</p>
-                                    </span>
-                                </label>
-                            </div>
-
-                            <!-- Row 3 -->
-                            <div class="pictogram" id="irritant">
-                                <label class="pictogramInner">
-                                    <input class="pictogramCheck" type="checkbox" data-hazard="irritant" />
-                                    <span class="iconBlock">
-                                        <img src="https://www.osha.gov/sites/default/files/inline-images/image9.png" alt="" />
-                                        <p>Irritant</p>
-                                    </span>
-                                </label>
-                            </div>
-
-                            <div class="pictogram" id="environmental">
-                                <label class="pictogramInner">
-                                    <input class="pictogramCheck" type="checkbox" data-hazard="environmental" />
-                                    <span class="iconBlock">
-                                        <img src="https://www.osha.gov/sites/default/files/inline-images/image8.png" alt="" />
-                                        <p>Environmental</p>
-                                    </span>
-                                </label>
-                            </div>
-
-                            <!-- Row 4 -->
-                            <div class="pictogram" id="acute">
-                                <label class="pictogramInner">
-                                    <input class="pictogramCheck" type="checkbox" data-hazard="acute" />
-                                    <span class="iconBlock">
-                                        <img src="https://www.osha.gov/sites/default/files/inline-images/image4.png" alt="" />
-                                        <p>Acute Toxicity</p>
-                                    </span>
-                                </label>
-                            </div>
-
-                            <div class="pictogram" id="gas">
-                                <label class="pictogramInner">
-                                    <input class="pictogramCheck" type="checkbox" data-hazard="gas" />
-                                    <span class="iconBlock">
-                                        <img src="https://www.osha.gov/sites/default/files/inline-images/image6.png" alt="" />
-                                        <p>Gas Under Pressure</p>
-                                    </span>
-                                </label>
-                            </div>
-
-                            <!-- Row 5 -->
-                            <div class="pictogram" id="oxidizer">
-                                <label class="pictogramInner">
-                                    <input class="pictogramCheck" type="checkbox" data-hazard="oxidizer" />
-                                    <span class="iconBlock">
-                                        <img src="https://www.osha.gov/sites/default/files/inline-images/image1.png" alt="" />
-                                        <p>Oxidizer</p>
-                                    </span>
-                                </label>
-                            </div>
-
-                            <!-- Spacer cell (keeps 5 left / 4 right) -->
-                            <div class="pictogram spacer" aria-hidden="true"></div>
-                        </div>
-                       
-					</div>
-                     <div class="panel" id="generatorInfo">
-                        <div class="panel" id="generatorInfoLabel">	
-                            <h2>Generator Info:</h2>
-                        </div>
-                        <div class="panel" id="generatorBox">
-                            <div class="panel" id="generatorLeft">
-                             <p>Name:</p>
-                        <p>Dept:</p>
-                        <p>Room:</p>
-                        <p>Phone:</p>
-                        </div>
-                        <div class="panel" id="generatorRight">
-                            <h2>Initial:</h2>
-                        </div>
-                        </div>
-                        
-					
-                       
-                    </div>
-
-
-
+						<div class='panel' id='generatorInfo'>
+							<div class='panel' id='generatorInfoLabel'>
+								<h2>Generator Info:</h2>
+							</div>
+							<div id='generatorBox'>
+								<div id='generatorLeft'>
+									<div id='contactBox'>
+										<div id='contactLeftText'>
+											<p>Name:</p>
+											<p>Dept:</p>
+											<p>Room:</p>
+											<p>Phone:</p>
+										</div>
+										<div id='contactRightText'>
+											<p>Caleb Messinger</p>
+											<p>Chemistry</p>
+											<p>6-144</p>
+											<p>860-774-3048 x43048</p>
+										</div>
+									</div>
+								</div>
+								<div class='panel' id='generatorRight'>
+									<h2>Initial:</h2>
 								</div>
 							</div>
 						</div>

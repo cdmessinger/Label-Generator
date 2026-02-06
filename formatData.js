@@ -9,43 +9,46 @@
 
 import fs from 'fs';
 
-const input = JSON.parse(fs.readFileSync('test.json', 'utf8'));
-
 const checkedPictograms = {
-	flame: false, //flammable
-	flameCircle: false, //oxidizer
-	corrosion: false, //corrosive
-	skull: false, //toxic
-	health: false, //acute toxicity
+	flammable: false, //flammable
+	corrosive: false, //corrosive
 	irritant: false, //irritant
+	acuteToxicity: false, //toxic
+	oxidizer: false, //oxidizer
+	reactive: false, //explosive
+	healthHazard: false, //acute toxicity
+	environmental: false, //environmental
 	gas: false, //gas
-	environment: false, //environmental
-	explosive: false, //explosive
 };
 
-function run(input) {
-	const chemicalNames = [];
+export function formatData(input) {
+	const returnData = {};
+
+	//initialize variables
+	const chemicalList = [];
 	const allPictograms = new Set();
 
-	console.log(input.chemicals);
+	//extract names/pictograms
+	console.log('INPUT:', input.chemicals);
 	for (const chemical of input.chemicals) {
-		chemicalNames.push(chemical.name);
+		chemicalList.push(chemical.name);
 		for (const pictogram of chemical.pictograms) {
 			allPictograms.add(pictogram);
 		}
 	}
 
-	console.log(allPictograms);
+	console.log('ALL PICTOGRAMS FOUND:', allPictograms);
 
 	//check off any present pictograms
 	for (const pictogram of allPictograms) {
 		if (checkedPictograms[pictogram] === false) {
 			checkedPictograms[pictogram] = true;
-			console.log('changed it to true');
 		}
 	}
-	console.log(chemicalNames);
-	console.log(checkedPictograms);
-}
 
-run(input);
+	returnData.chemicalList = chemicalList;
+	returnData.pictograms = checkedPictograms;
+
+	console.log('RETURNED DATA:', returnData);
+	return returnData;
+}

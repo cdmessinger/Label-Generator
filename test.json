@@ -1,30 +1,64 @@
 {
-	"date": "2026-01-16",
 	"chemicals": [
 		{
 			"name": "Acetone",
 			"casNo": "67-64-1",
 			"signalWord": "Danger",
-			"pictograms": ["flame", "health"]
+			"pictograms": ["flammable", "healthHazard"]
 		},
 		{
 			"name": "Hydrochloric acid",
 			"casNo": "7647-01-0",
 			"signalWord": "Danger",
-			"pictograms": ["corrosion"]
+			"pictograms": ["corrosive"]
 		},
 		{
 			"name": "Copper(II) sulfate pentahydrate",
 			"casNo": "7758-98-7",
 			"signalWord": "Warning",
-			"pictograms": ["environment"]
+			"pictograms": ["environmental"]
+		},
+		{
+			"name": "Sodium hydroxide",
+			"casNo": "1310-73-2",
+			"signalWord": "Danger",
+			"pictograms": ["corrosive"]
+		},
+		{
+			"name": "Ethanol",
+			"casNo": "64-17-5",
+			"signalWord": "Danger",
+			"pictograms": ["flammable"]
+		},
+		{
+			"name": "Nitric acid",
+			"casNo": "7697-37-2",
+			"signalWord": "Danger",
+			"pictograms": ["corrosive", "oxidizer"]
+		},
+		{
+			"name": "Hydrogen peroxide (30%)",
+			"casNo": "7722-84-1",
+			"signalWord": "Danger",
+			"pictograms": ["oxidizer", "corrosive"]
+		},
+		{
+			"name": "Methanol",
+			"casNo": "67-56-1",
+			"signalWord": "Danger",
+			"pictograms": ["flammable", "acuteToxicity"]
+		},
+		{
+			"name": "Potassium permanganate",
+			"casNo": "7722-64-7",
+			"signalWord": "Danger",
+			"pictograms": ["oxidizer", "environmental"]
+		},
+		{
+			"name": "Formaldehyde solution",
+			"casNo": "50-00-0",
+			"signalWord": "Danger",
+			"pictograms": ["healthHazard", "acuteToxicity"]
 		}
-	],
-	"labeler": {
-		"name": "Caleb",
-		"room": "6-146",
-		"department": "Chemistry",
-		"phoneNo": "860-774-3048, x43048"
-	},
-	"qrDataUrl": null
+	]
 }
