@@ -29,8 +29,8 @@ export function formatData(input) {
 	const allPictograms = new Set();
 
 	//extract names/pictograms
-	console.log('INPUT:', input.chemicals);
-	for (const chemical of input.chemicals) {
+	console.log('INPUT:', input);
+	for (const chemical of input) {
 		chemicalList.push(chemical.name);
 		for (const pictogram of chemical.pictograms) {
 			allPictograms.add(pictogram);
